@@ -1,0 +1,49 @@
+
+> web@1.0.0 build
+> next build
+
+[1G[0K  [1m[38;2;173;127;168m ▲ Next.js 14.1.4[39m[22m
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+(node:25944) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ ⚠ Compiled with warnings
+
+./app/api/user/route.ts
+Attempted import error: 'PrismaClient' is not exported from '@repo/db/client' (imported as 'PrismaClient').
+
+Import trace for requested module:
+./app/api/user/route.ts
+
+(node:25960) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ [32m[1m✓[22m[39m Compiled successfully
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[31mFailed to compile.
+[39m
+[36m./app/api/auth/[...nextauth]/route.ts[39m:[33m4[39m:[33m26[39m
+[31m[1mType error[22m[39m: Argument of type '{ providers: OAuthConfig<GoogleProfile>[]; callbacks: { signIn({ user, account }: { user: { email: string; name: string; }; account: { provider: "google" | "github"; }; }): Promise<...>; }; secret: string; }' is not assignable to parameter of type 'AuthOptions'.
+  The types of 'callbacks.signIn' are incompatible between these types.
+    Type '({ user, account }: { user: { email: string; name: string; }; account: { provider: "google" | "github"; }; }) => Promise<boolean>' is not assignable to type '(params: { user: User | AdapterUser; account: Account | null; profile?: Profile | undefined; email?: { verificationRequest?: boolean | undefined; } | undefined; credentials?: Record<...> | undefined; }) => Awaitable<...>'.
+      Types of parameters '__0' and 'params' are incompatible.
+        Type '{ user: User | AdapterUser; account: Account | null; profile?: Profile | undefined; email?: { verificationRequest?: boolean | undefined; } | undefined; credentials?: Record<...> | undefined; }' is not assignable to type '{ user: { email: string; name: string; }; account: { provider: "google" | "github"; }; }'.
+          Types of property 'user' are incompatible.
+            Type 'User | AdapterUser' is not assignable to type '{ email: string; name: string; }'.
+              Type 'User' is not assignable to type '{ email: string; name: string; }'.
+                Types of property 'email' are incompatible.
+                  Type 'string | null | undefined' is not assignable to type 'string'.
+                    Type 'undefined' is not assignable to type 'string'.
+
+[0m [90m 2 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"../../../../lib/auth"[39m[0m
+[0m [90m 3 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mconst[39m handler [33m=[39m [33mNextAuth[39m(authOptions)[0m
+[0m [90m   |[39m                          [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mexport[39m { handler [36mas[39m [33mGET[39m[33m,[39m handler [36mas[39m [33mPOST[39m }[0m
+[?25h[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m Lifecycle script `build` failed with error:
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcode[39m [33m1[39m
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mpath[39m /Users/yogeshpoonia/Documents/100xdev/week18/week-17-final-code/apps/merchant-app
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mworkspace[39m web@1.0.0
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mlocation[39m /Users/yogeshpoonia/Documents/100xdev/week18/week-17-final-code/apps/merchant-app
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m command failed
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcommand[39m sh -c next build
+[1G[0K⠙[1G[0K
