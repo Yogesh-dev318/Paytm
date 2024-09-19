@@ -1,7 +1,7 @@
 - Clone the repo
 
 ```jsx
-
+git clone https://github.com/Yogesh-dev318/Vault-Pay.git
 ```
 
 - npm install
